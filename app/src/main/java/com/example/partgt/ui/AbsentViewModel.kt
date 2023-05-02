@@ -1,13 +1,13 @@
-package com.example.partgt.ui.home
+package com.example.partgt.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class AbsentViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is slideshow Fragment"
     }
     val text: LiveData<String> = _text
 }
