@@ -1,10 +1,12 @@
-package com.example.partgt
+package com.example.partgt.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import com.example.partgt.R
 import com.example.partgt.databinding.ActivityGuestFormBinding
+import com.example.partgt.viewModel.GuestFormViewModel
 
 class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
 
