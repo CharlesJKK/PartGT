@@ -3,6 +3,7 @@ package com.example.partgt.repository
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.partgt.constants.DataBaseConstants
 
 class GuestDataBase(
     context: Context
@@ -15,7 +16,11 @@ class GuestDataBase(
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("create table Guest(" + "id intenger primary key autoincrement," + " name text," + " presence integer);")
+        db.execSQL(
+            "create table" + DataBaseConstants.GUEST.TABLE_NAME + "(" +
+                    DataBaseConstants.GUEST.COLUMNS.ID + " intenger primary key autoincrement," +
+                    DataBaseConstants.GUEST.COLUMNS.NAME + " text," + DataBaseConstants.GUEST.COLUMNS.ID + " integer);"
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
