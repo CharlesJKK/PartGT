@@ -51,6 +51,20 @@ class GuestRepository private constructor(context: Context) {
 
             db.update(DataBaseConstants.GUEST.TABLE_NAME, values, selection, args)
             true
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+    fun delete(guestId: Int): Boolean {
+        return try {
+            val db = guestDataBase.writableDatabase
+
+            val selection = "${DataBaseConstants.GUEST.COLUMNS.ID} = ?"
+            val args = arrayOf(guestId.toString())
+
+            db.delete(DataBaseConstants.GUEST.TABLE_NAME, selection, args)
+            true
         }catch (e: Exception){
             false
         }
